@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task</title>
+	<style>
+		.num{
+			color:red;
+			font-size:20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="myList"></div>
+
+	<button onclick="maxMin()">Both</button>
+	<button onclick="max()">Max</button>
+	<button onclick="min()">Min</button>
+	<button onclick="calc()">Calculate</button>
+	<input type="text" name="txt" id="txt" placeholder="Search in array" />
+        <button onclick="search();">Search</button>
+    
+
+	<div id="max"></div>
+	<p id="demo"></p>
+
+
+	
+
+	<script>
+		// initialize array with 10 elements
+			var nums = new Array(10);
+		// iterate over each element and prompt for value
+			for (var i = 0; i < nums.length; i++){
+  				var input = prompt('Enter number ' + (i + 1) + ' of ' + (nums.length ));
+  		// place value (as a number) into the array
+  				nums[i] = new Number(input);
+		}
+
+
+
+
+
+function maxMin(){
+	const min=Math.min(...nums);
+	const max=Math.max(...nums);
+	document.getElementById("max").innerHTML = "the Max value is <span class='num'>" + max + "</span> and the Minmum value is <span class='num'>" + min + "</span>";
+
+}
+
+function min(){
+	const min=Math.min(...nums);
+	document.getElementById("max").innerHTML = "the Minmum value is <span class='num'>" + min + "</span>";
+
+}
+
+function max(){
+	const max=Math.max(...nums);
+	document.getElementById("max").innerHTML = "the Max value is <span class='num'>" + max + "</span>";
+
+}
+
+function calc(){
+	const min=Math.min(...nums);
+	const max=Math.max(...nums);
+	const sum = min + max ;
+	document.getElementById("max").innerHTML = "<span class='num'>" + sum;
+}
+
+
+
+nums.reverse();
+
+const arr = nums;
+const prepareUL = (root, arr) => {
+   let ul = document.createElement('ul');
+   let li;
+   root.appendChild(ul);
+   arr.forEach(function(item) {
+      if (Array.isArray(item)) {
+         prepareUL(li, item);
+         return;
+      };
+      li = document.createElement('li');
+      li.appendChild(document.createTextNode(item));
+      ul.appendChild(li);
+   });
+}
+const div = document.getElementById('myList');
+prepareUL(div, arr);
+
+
+// search
+
+            var myArr = nums;
+
+            
+            function search()
+            {
+                var txt = document.getElementById('txt').value;
+                var index = myArr.indexOf(txt);
+                console.log(index);
+                
+                if(index !== -1)
+                {
+                    alert('Exist');
+                }else{
+                    alert('Not Exist');
+                }
+                
+            }
+
+            document.getElementById('demo').innerHTML = myArr;
+
+
+</script>
+
+
+
+
+</body>
+</html>

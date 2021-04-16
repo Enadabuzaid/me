@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <title>Dark mood </title>
+    <script>
+        function setBorder(){
+            
+        }
+         function setColor(color){
+            var elem = document.getElementById("txt-co");
+            var co = elem.style.color = color;
+            var bo = "2px solid "+co;
+            document.getElementById("text-bo").style.border =bo;
+            
+
+        }
+
+        
+    </script>
+    <style>
+        :root{
+            --bg-main:#eff0f4;
+            --color-or:#353535;
+            --color-b : #eff0f4;
+            --color-y : #00bcd4;
+            --color-1 : #2C6E49;
+            --color-2 : #370617;
+            --color-3 : #d08c60;
+            --color-4 : #89023e;
+            --box-co: #bfc0c0;
+
+        }
+
+        body.dark{
+            --bg-main:#2b2c2f;
+            --color-or:rgb(240, 180, 69);
+            --color-b : rgb(61, 59, 59);
+            --color-y : rgb(168, 85, 223); 
+            --color-1 : #FFC9B9;
+            --color-2 : #81b29a;
+            --color-3 : #16697a;
+            --color-4 : #f5cb5c;
+            --box-co: #2d3142;
+
+
+
+        }
+
+        body{
+            background-color: var(--bg-main);
+        }
+
+        .day-night{
+            height: 30px;
+            width: 30px;
+            background: var(--color-or);
+            border-radius: 50%;
+            text-align: center;
+        }
+
+        .day-night i{
+            color: var(--color-b);
+            line-height: 30px;
+        }
+
+        .head{
+            margin-top: 25px;
+            
+            
+        }
+
+        .hello{
+            text-shadow: 2px 0px 0px var(--color-or),
+             2px 1px 0px var(--color-or), 2px 2px 0px var(--color-or), 
+             2px 3px 0px var(--color-or), 2px 4px 0px var(--color-or),
+             2px 5px 0px var(--color-or), 2px 6px 0px var(--color-or),
+             2px 7px 2px var(--color-or), 2px 8px 3px var(--color-or);
+            font-size: 40px;
+            font-size: 50px;
+            font-family: cursive;
+            margin-left: 40px;
+            text-transform: uppercase;
+            font-weight: bolder;
+            color: var(--color-y);
+        }
+
+        #text{
+            font-size: 35px;
+            font-family: monospace;
+            margin-left: 12px;
+            color: var(--color-y);
+        }
+
+        .ty{
+            background: var(--color-y);
+            color: var(--color-or);
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: padding 2s ease;
+
+        }
+
+
+        .ty:hover{
+            background: var(--color-or);
+            color: var(--color-y);
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .box{
+            margin-top: 60px;
+            background: var(--color-or);
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .box-1{
+            height: 180px;
+            width: 60px;
+            position: absolute;
+            top: 75px;
+            right: 0;
+            background: var(--box-co);
+            text-align: center;
+            padding-top: 20px;
+            /* transition: all 0.3s ease;
+	        transform: translateX(100%); */
+        }
+
+        
+
+        .text-co{
+            display: flex;
+            margin-top: 15px;
+            text-align: left;
+            
+        }
+
+        .text-co p {
+            margin-left: 15px;
+            line-height: 1.3;
+            width: 65%;
+            padding: 20px;
+
+        }
+
+        .text-co img{
+            height: 300px;
+            width: 300px;
+            padding: 40px;
+            
+
+        }
+
+        .colors div{
+            margin-bottom: 10px;
+            height: 30px;
+            width: 30px;
+            border:  none;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            left: 20%;
+            
+        }
+
+        .color-1{background-color: var(--color-1);}
+        .color-2{background-color: var(--color-2);}
+        .color-3{background-color: var(--color-3);}
+        .color-4{background-color: var(--color-4);}
+
+    </style>
+</head>
+<body>
+    
+    <div class="day-night">
+        <i class="fas "></i>
+    </div>
+
+    <div class="box"></div>
+    <div class="box-1">
+        <div class="colors">
+            <div class="color-1" onclick="setColor('var(--color-1)');"></div>
+            <div class="color-2" onclick="setColor('var(--color-2)')"></div>
+            <div class="color-3" onclick="setColor('var(--color-3)')"></div>
+            <div class="color-4" onclick="setColor('var(--color-4)')"></div>
+        </div>
+    </div>
+    
+
+
+    <div class="head">
+        <span class="hello">Hello,</span><span id="text"></span>
+    </div>
+    <div class="text-co" id="text-bo">
+        <p id="txt-co">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime pariatur, totam laudantium,
+             consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel eaLorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime pariatur, totam laudantium,
+             consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel ea.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime pariatur, totam laudantium,
+             consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel ea.Omnis delectus vel ea. Omnis delectus vel ea.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime pariatur, totam laudantium,
+             consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel eaLorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime pariatur, totam laudantium,
+             consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel ea.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime pariatur, totam laudantium,
+             consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel ea.Omnis delectus vel ea. Omnis delectus vel ea.consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel ea.Omnis delectus vel ea. Omnis delectus vel ea.consectetur debitis amet unde mollitia dignissimos vitae tempora sapiente dolorem facilis natus sed iusto! 
+             Omnis delectus vel ea.Omnis delectus vel ea. Omnis delectus vel ea.
+        </p>
+        <img src="https://images.unsplash.com/photo-1515681300827-de75e75e8081?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="">
+    </div>
+
+    <script>
+        const dayNight = document.querySelector(".day-night");
+        dayNight.addEventListener("click" , ()=>{
+        dayNight.querySelector("i").classList.toggle("fa-sun");
+        dayNight.querySelector("i").classList.toggle("fa-moon");
+        document.body.classList.toggle("dark");
+        
+        var x = document.body.classList.contains("dark");
+;
+        if(x === true){
+            document.getElementById("text").innerHTML = "it is <span class='ty'>Dark</span> Mood";
+        } else{
+            document.getElementById("text").innerHTML = "it is <span class='ty'>Light</span> Mood";
+
+        }
+        
+        
+       
+
+    })
+
+
+    window.addEventListener("load",()=>{
+        if (document.body.classList.contains("dark")) {
+            dayNight.querySelector("i").classList.add("fa-sun");
+        } else{
+            dayNight.querySelector("i").classList.add("fa-moon");
+
+        }
+    })
+
+    </script>
+</body>
+</html>
